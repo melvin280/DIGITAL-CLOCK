@@ -1,0 +1,19 @@
+#THIS IS A PROJECT THAT SHOWS THE TIME, DATE, DAY, MONTH, YEAR.
+from tkinter import *
+import time
+
+
+def digital():
+    # use %I:%M:%S %p for time or just use %r only
+    d=time.strftime("%r \n %A %B %d/%m/%Y")
+    clock.config(text=d)
+    clock.after(200, digital)
+
+
+root=Tk()
+root.title("Digital Clock")
+clock=Label(root, font=("master", 80, "bold italic"), bg="white")
+clock.grid(row=2, column=1)
+#TO RUN👇
+digital()
+root.mainloop()
